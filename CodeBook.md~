@@ -1,0 +1,6 @@
+Creating a Tidy Data Set 
+
+A training and test data sets were downloaded from a Samsung Galaxy S smartphone study in order to create a tidy data set. The following steps were taken in order to create the tidy data set from the two larger training and test data sets. The code for this protocol can be found in run_analysis.R.
+
+* 1. Data were obtained from the following zip file: 
+
