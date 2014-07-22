@@ -2,7 +2,7 @@
 # for Coursera Data Science Signature Track
 # July 2014  Nicole Goebel
 ###-------------------------------------------------------------------------
-## 0. download and unzip zip file:
+## 1. download zip file
 ## https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 ##   a. download file into directory
 if (!file.exists("./Dataset.zip")){
@@ -13,13 +13,13 @@ if (!file.exists("./Dataset.zip")){
     dateDownloaded <- date()
     print(dateDownloaded)
 } else {message("Dataset.zip already exists")}
-##   b. unzip file
+## 2. unzip zip file:
 dataDir = "UCI HAR Dataset"
 if (!file.exists(dataDir)) {
     unzip("Dataset.zip")
 } else {message("Samsung data directory and data already exist")}
 ###-------------------------------------------------------------------------
-## 1. load data from zip file:
+## 3. load data from zip file:
 ##      use read.table for text file with header = FALSE
 ##      subject == person being measured
 ##      Y_test == activities performed in x_test 
@@ -38,7 +38,7 @@ trainY<-read.table("./UCI HAR Dataset/train/y_train.txt", header=FALSE)
 #testY dimensions are 7352x1, LABELS - activities performed in x_train (the contents of y_train matches activity labels)
 
 ###-----------------------------------------------------------------------
-## 2. Appropriately label data set (V1,V2) with descriptive variable names.
+## 4. Appropriately label data set (V1,V2) with descriptive variable names.
 ##    Names based on the action the variable is recording.
 ##    a. first read in the feature names and label as a vector varNames
 features <- read.table("./UCI Har Dataset/features.txt")
@@ -60,7 +60,7 @@ names(trainX)<-varNames
 names(testX)<-varNames
 
 ###-------------------------------------------------------------------------
-## 3. Bind training and test sets to create one data set
+## 5. Bind training and test sets to create one data set
 ##    Ensure each file has same number of rows
 ##    Bind with cbind() for each training and test set
 ##      and rbind() to merge training and test sets
@@ -71,7 +71,7 @@ testAll<-cbind(activity,testX)  #bind y_train vector to y_test
 allDat<-rbind(testAll, trainAll)#bind train and test sets
 
 ###-----------------------------------------------------------------------
-## 3. Use descriptive activity labels to name the activities in data set
+## 6. Use descriptive activity labels to name the activities in data set
 ##    1=WALKING, 2=WALKING_UPSTAIRS, 3=WALKING_DOWNSTAIRS, 
 ##    4=SITTING, 5=STANDING, 6=LAYING
 ##    Replace activity numbers with activity labels using subsetting 
@@ -86,11 +86,12 @@ allDat$activity[allDat$activity == "6"] <- as.character(activityLabels$V2[6])
 allDat$activity <- as.factor(allDat$activity)
 
 ###-----------------------------------------------------------------------
-## 5. Extract only measurements on the mean and standard 
+## 7. Extract only measurements on the mean and standard 
 ##    deviation for each measurement
 ##    First get list of varNames to extract
 ##      - be sure to include the "activity" column
 extr<-c("activity", varNames[grep("activity|mean|std", varNames)])
+write.table(extr, "extr_vars.txt") # writes feature names to file
 ##    Then extract these variables by their name from data frame
 MeanStdDat <- allDat[,extr]
 
@@ -101,7 +102,9 @@ MeanStdDat <- allDat[,extr]
 library(dplyr)
 tidy<- MeanStdDat %>% group_by(activity) %>% summarise_each(funs(mean))
 write.csv(tidy, file="tidydata.csv", row.names=FALSE)
+write.table(tidy, file="tidydata.txt", row.names=FALSE)
+## the above files can be loaded with the following commands:
+#  read.csv("tidydata.csv" or read.table("tidydata.txt")
 
-##    Explain how to read the file into R (e.g. using read.table() )
 ##    Dont forget the ReadMe.md, CodeBook.md, R script, and a tidy data text file for submission!
 ## codebook:  codebook that clearly defined the variables, calculated summaries, and units ... indicate all the variables and summaries you calculated, along with units, and any other relevant information
