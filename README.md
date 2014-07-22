@@ -14,13 +14,7 @@ The R code carries out the following steps:
 3. Loads raw training and test sets using read.table.
 4. Labels data set appropriately with descriptive names. Raw variable names were obtained by loading the features.txt file, and removing any dots, subscripts, spaces and parentheses, and replacing commas with the word "to". Although we were instructed to make all variables lower case, capitals were left intact in order to improve readability. See CodeBook.md for explanations of variable names. The generic variable names of each training and test set (from x_test.txt and x_train.txt) were replaced with these modified variable names.
 5.Combined the training and test sets: training and test data sets were "rbind"ed to the appropriate activity vector (obtained from y_train.txt and y_test.txt, respectively). Next, the complete training and test data sets were combined into one data frame named "allDat" using rbind.
-6. Activities (in the "activity" feature/column) in the combined dataset were named using descriptive names, instead of their original names by number. The activity names were loaded from the activity_labels.txt file found in the UCI HAR Dataset directory. The numbered activities (1 through 6) were replaced with the following labels (as found in activity_lables.txt): 
-* 1=WALKING
-* 2=WALKING_UPSTAIRS
-* 3=WALKING_DOWNSTAIRS 
-* 4=SITTING
-* 5=STANDING
-* 6=LAYING
+6. Activities (in the "activity" feature/column) in the combined dataset were named using descriptive names, instead of their original names by number. The activity names were loaded from the activity_labels.txt file found in the UCI HAR Dataset directory. The numbered activities (1 through 6) were replaced with the following labels (as found in activity_lables.txt):  1=WALKING, 2=WALKING_UPSTAIRS, 3=WALKING_DOWNSTAIRS , 4=SITTING, 5=STANDING, 6=LAYING
 7. Measurements on the mean and standard deviation for each measurement were extracted. In this case, if a variable name contained the word "mean" or "std", that column of data was extracted.
 8. A second, independent tidy data set with the average of each variable for each activity and each subject was created. This file is named "tidydata.csv" and can be loaded using the following command at the R prompt (when in the directory with the file): read.csv("tidydata.csv")
 9. The tiday data text file ("tidydata.txt"), README.md and CodeBook.md were submitted for the completion of this assignment.
