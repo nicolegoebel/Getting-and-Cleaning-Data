@@ -19,7 +19,7 @@ The remaining features that were extracted from the raw data sets are listed  be
 * "Mag" denotes the magnitude of three-dimensional signals (i.e., "X", "Y", "Z") calcuated using the Euclidean norm. 
 * All features are numbers that are normalized and range from -1 to 1.
 
-These features are listed below:
+These column number and feature names are listed below:
 
 * "2" "tBodyAccmeanX"
 * "3" "tBodyAccmeanY"
