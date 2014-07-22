@@ -1,0 +1,22 @@
+R version 3.0.3 (2014-03-06)
+Platform: x86_64-apple-darwin10.8.0 (64-bit)
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+ [1] splines   grid      tcltk     stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] dplyr_0.2             timetools_1.6.0       quantmod_0.4-0        TTR_0.22-0            xts_0.9-7            
+ [6] zoo_1.7-11            Defaults_1.1-1        Hmisc_3.14-4          Formula_1.1-1         survival_2.37-7      
+[11] plyr_1.8.1            jpeg_0.1-8            knitr_1.6             RCurl_1.95-4.1        bitops_1.0-6         
+[16] jsonlite_0.9.8        httpuv_1.3.0          httr_0.3              lattice_0.20-27       nlme_3.1-115         
+[21] openintro_1.4         plotrix_3.5-7         swirl_2.2.9           KernSmooth_2.23-12    sqldf_0.4-7.1        
+[26] RSQLite.extfuns_0.0.1 RSQLite_0.11.4        DBI_0.2-7             gsubfn_0.6-5          proto_0.3-10         
+
+loaded via a namespace (and not attached):
+ [1] assertthat_0.1      chron_2.3-45        cluster_1.15.1      digest_0.6.4        evaluate_0.5.5     
+ [6] formatR_0.10        latticeExtra_0.6-26 magrittr_1.0.1      markdown_0.7        mime_0.1.1         
+[11] parallel_3.0.3      RColorBrewer_1.0-5  Rcpp_0.11.1         stringr_0.6.2       testthat_0.8.1     
+[16] tools_3.0.3         yaml_2.1.13        
