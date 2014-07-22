@@ -7,7 +7,19 @@ The files X_test.txt and X_train.txt each contain numbers for 561 features (colu
 
 The first feature is for "activities" which include WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING and LAYING. This variable is in FACTOR form.
 
-The remaining features that were extracted from the raw data sets are listed  below (this list can also be found in the file "extra_vars.txt"). The column number is listed to the left of each feature. Each feature is a vector of number types. Features containing the word "mean" are a average of the signal while "meanFreq" indicates an average of the frequency components to obtain a mean frequency. Features containing "std" are a standard deviation of the mean for that feature. Features that begin with the letter "t" indicate that the features were derived in time. Letters "X", "Y", "Z" indicate the direction of the three-axial raw signal. Features come from the accellerometer (denoted by "Acc") and gyroscope (denoted by "Gyro"), or body (denoted by "Body" or "BodyBody") and gravity (dnoted by "Gravity") acceleration signals. Jerk (denoted by "Jerk") singals were obtained from body linear acceleration and angular velocity. "Mag" denotes the magnitude of three-dimensional signals calcuated using the Euclidean norm. All features are numbers that are normalized and range from -1 to 1.These features are listed below:
+The remaining features that were extracted from the raw data sets are listed  below (this list can also be found in the file "extra_vars.txt"), and are named according to the following conventions:
+* The column number is listed to the left of each feature. 
+* Each feature is a vector of NUMBER types. 
+* Features containing the word "mean" are a average of the signal while "meanFreq" indicates an average of the frequency components to obtain a mean frequency. 
+* Features containing "std" are a standard deviation of the mean for that feature. 
+* Features that begin with the letter "t" indicate that the features were derived in time. 
+* Letters "X", "Y", "Z" indicate the direction of the three-axial raw signal. 
+* Features come from the accellerometer (denoted by "Acc") and gyroscope (denoted by "Gyro"), or body (denoted by "Body" or "BodyBody") and gravity (dnoted by "Gravity") acceleration signals. 
+* Jerk (denoted by "Jerk") signals were obtained from body linear acceleration and angular velocity. 
+* "Mag" denotes the magnitude of three-dimensional signals (i.e., "X", "Y", "Z") calcuated using the Euclidean norm. 
+* All features are numbers that are normalized and range from -1 to 1.
+
+These features are listed below:
 
 *"2" "tBodyAccmeanX"
 *"3" "tBodyAccmeanY"
