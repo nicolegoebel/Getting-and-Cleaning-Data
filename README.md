@@ -18,3 +18,5 @@ The R code carries out the following steps:
 7. Measurements on the mean and standard deviation for each measurement were extracted. In this case, if a variable name contained the word "mean" or "std", that column of data was extracted.
 8. A second, independent tidy data set with the average of each variable for each activity and each subject was created. This file is named "tidydata.csv" and can be loaded using the following command at the R prompt (when in the directory with the file): read.csv("tidydata.csv")
 9. The tiday data text file ("tidydata.txt"), README.md and CodeBook.md were submitted for the completion of this assignment.
+
+Information on the R session can be found in the text file "RsessionInfo.txt". You can open this file with a text editor. 
