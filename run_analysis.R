@@ -106,5 +106,8 @@ write.table(tidy, file="tidydata.txt", row.names=FALSE)
 ## the above files can be loaded with the following commands:
 #  read.csv("tidydata.csv" or read.table("tidydata.txt")
 
+# the following line captures session info
+writeLines(capture.output(sessionInfo()), "RsessionInfo.txt")
+
 ##    Dont forget the ReadMe.md, CodeBook.md, R script, and a tidy data text file for submission!
 ## codebook:  codebook that clearly defined the variables, calculated summaries, and units ... indicate all the variables and summaries you calculated, along with units, and any other relevant information
