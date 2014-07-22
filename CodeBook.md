@@ -21,6 +21,7 @@ The remaining features that were extracted from the raw data sets are listed  be
 
 These column number and feature names are listed below:
 
+* "1" "activities"
 * "2" "tBodyAccmeanX"
 * "3" "tBodyAccmeanY"
 * "4" "tBodyAccmeanZ"
